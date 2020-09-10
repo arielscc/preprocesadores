@@ -1,0 +1,21 @@
+-var titulo = "Titulo Principal"
+-var leer = 'leer más'
+
+-var titles = ['Titulo Principal', 'title_2', 'leer más']
+
+-var image = 'images/imagen.png'
+-var games = ['title_game_1', 'title_game_2', 'title_game_3', 'title_game_4']
+
+
+-var user = 'ariel'
+//- footer
+-var links = ['about', 'news', 'contact']
+
+//- mixins
+
+mixin caja(image, title, content)
+  .caja
+    .caja__imagen: img(src=image, alt=title, srcset="")
+    .caja__contenido
+      h3 #{title}
+      p #{content}

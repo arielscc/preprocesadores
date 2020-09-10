@@ -92,5 +92,34 @@ mixin box(image, title, content)
 
 body
   //- ...
-  +caja(image, game, 'contenido pe')
+  +caja(image, game, 'some content')
 ```
+
+### Includes
+
+```pug
+body
+  include path/file.pug
+```
+
+### export
+
+in `landing.pug`:
+
+```pug
+extends path/template.pug
+block content
+
+  h1 Hello world
+```
+
+in `template.pug`:
+
+```pug
+body
+  include path/header.pug
+  block content
+  include path/footer.pug
+```
+
+`block content` includes content on `template.pug`

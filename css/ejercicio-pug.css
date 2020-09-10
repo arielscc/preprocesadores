@@ -100,9 +100,11 @@ header a {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 80%;
+  margin: 0 auto;
 }
 .caja {
-  max-width: 400px;
+  width: 500px;
   margin: 50px 20px;
 }
 

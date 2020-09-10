@@ -79,3 +79,18 @@ if user
 else
   a.boton Login
 ```
+
+### Mixins
+
+```pug
+mixin box(image, title, content)
+  .box
+    .box_image: img(src=image, alt=title, srcset="")
+    .box_content
+      h3 #{title}
+      p #{content}
+
+body
+  //- ...
+  +caja(image, game, 'contenido pe')
+```

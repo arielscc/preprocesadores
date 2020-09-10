@@ -93,6 +93,7 @@ header a {
   background-color: #333;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .contenido {

@@ -2,10 +2,21 @@
 -var leer = 'leer más'
 
 -var titles = ['Titulo Principal', 'title_2', 'leer más']
+
+-var image = 'images/imagen.png'
 -var games = ['title_game_1', 'title_game_2', 'title_game_3', 'title_game_4']
 
 
 -var user = 'ariel'
+
+//- mixins
+
+mixin caja(image, title, content)
+  .caja
+    .caja__imagen: img(src=image, alt=title, srcset="")
+    .caja__contenido
+      h3 #{title}
+      p #{content}
 
 doctype html
 html(lang="es")
@@ -20,12 +31,12 @@ html(lang="es")
       else
         a.boton Registros
     section.intro
-      .intro__imagen: img(src="images/imagen.png", alt="", srcset="")
+      .intro__imagen: img(src="images/imagen.png", alt="imagen de caja", srcset="")
       .intro__contenido
         h2=titles[0]
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui commodi deleniti iste sunt, magnam blanditiis expedita consequuntur et incidunt minima. Delectus sit amet at quos repudiandae provident, vel maxime nam! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           span Voluptates maiores perspiciatis corrupti autem incidunt eveniet quibusdam vel? Tempora maxime libero cumque, iusto minus sequi temporibus repudiandae fugiat atque pariatur natus.
         a.boton #{titles[2]}
-    //- ul
-    //-   each game in games
-    //-     li #{game}
+    main.contenido
+      each game in games
+        +caja(image, game, 'contenido pe')

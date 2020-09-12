@@ -8,19 +8,49 @@
 
 @fuente-base: 18px;
 
+// functions
+@bg-light: boolean(luma(@color-claro) < 50%);
+
+// Mixins
+.sombra-caja {
+  box-shadow: 0px 5px 15px 0px fade(@color-primario, 50%);
+}
+
+.oswald {
+  font-family: @fuente_b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name {
+    @arguments();
+  }
+  @-webkit-keyframes @name {
+    @arguments();
+  }
+  @keyframes @name {
+    @arguments();
+  }
+}
+.animation(@arguments) {
+  animation: @arguments;
+}
+
 * {
   box-sizing: border-box;
 }
 body {
+  background-color: if(@bg-light, @color-primario, @color-claro);
+
   margin: 0;
   font-family: @fuente_a;
-  color: @color-primario;
+  color: if(@bg-light, @color-claro, @color-primario);
 }
 
 h1,
 h2,
 h3 {
-  margin: 0;
-  text-transform: uppercase;
+  .oswald;
   font-family: @fuente_b;
 }
